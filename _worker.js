@@ -4,7 +4,7 @@ import { connect } from 'cloudflare:sockets';
 
 // How to generate your own UUID:
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
-let userID = '9df5d97b-7268-4bfe-ba1d-fe9b30010063';
+let userID = '3fb91ede-05fc-4349-a81a-706d6f4d877c';
 
 const proxyIPs = ['cdn-all.xn--b6gac.eu.org', 'cdn.xn--b6gac.eu.org', 'cdn-b100.xn--b6gac.eu.org', 'edgetunnel.anycast.eu.org', 'cdn.anycast.eu.org'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
@@ -101,7 +101,7 @@ export default {
 					default:
 						// return new Response('Not found', { status: 404 });
 						// For any other path, reverse proxy to 'www.fmprc.gov.cn' and return the original response
-						url.hostname = Math.random() < 0.5 ? 'tv.cctv.com' : 'www.bilibili.com';
+						url.hostname = Math.random() < 0.5 ? 'www.youku.com' : 'www.bilibili.com';
 						url.protocol = 'https:';
 						request = new Request(url, request);
 						return await fetch(request);
